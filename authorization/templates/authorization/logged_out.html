@@ -1,0 +1,10 @@
+{% extends 'authorization/base_auth.html' %}
+
+{% block title %}Выход из аккаунта{% endblock %}
+
+{% block content %}
+	<div class="features">
+		<h1>Вы вышли из аккаунта</h1>
+		<p>Вы можете войти заново<br><a href="{% url 'login' %}" class="btn btn-primary">Вход</a></p>
+	</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма по добавлению рисунка{% endblock %}
+
+{% block content %}
+	<div class="features">
+		<h1>Форма по добавлению рисунка</h1>
+		<form method="post" enctype="multipart/form-data" class="form-group">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button class="btn btn-success" type="submit">Добавить рисунок</button>
+		</form>
+	</div>
+{% endblock %}

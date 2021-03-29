@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ picture_data.title }}{% endblock %}
+
+{% block content %}
+	<div class="features">
+		<div class="alert alert-dark">
+			<h1>{{ picture_data.title }}</h1>
+			<p> {{ picture_data.date }}</p>
+			<p>{{ picture_data.full_text }}</p>
+			<img src="{{ picture_data.picture.url }}">
+		</div>
+	</div>
+{% endblock %}

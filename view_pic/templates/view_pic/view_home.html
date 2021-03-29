@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Новости на сайте{% endblock %}
+
+{% block content %}
+	<div class="features">
+		<h1>Рисунки</h1>
+		{% if pictures|length >= 1 %}
+			{% for el in pictures %}
+				<div class="alert alert-warning">
+					<h3>{{ el.title }}</h3>
+					<p>{{ el.anons }}</p>
+					<a href="{% url 'picture-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
+				</div>			
+			{% endfor %}
+		{% else %}
+			<p>Нет записей</p>
+		{% endif %}
+	</div>
+{% endblock %}
