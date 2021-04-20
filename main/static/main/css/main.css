@@ -1,82 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+	--dark-green: #164A41;
+	--medium-green: #4D774E;
+	--light-green: #9DC88D;
+	--natural-yellow: #F1B24A;
+	--white: #FFFFFF;
+}
+
 body {
-	background: #9966CC;
+	background: linear-gradient(to right, var(--dark-green), var(--light-green));
+	position: relative;
 }
 
-aside {
-	float: left;
-	background: #9932CC;
-	width: 23%;
-	padding: 1.5%;
-	height: 100vh;
-	color: #fff;
-	border-right: 5px solid #4d4d4d;
-}
-
-aside img {
-	width: 60px;
-	float: left;
-}
-
-aside .logo {
-	font-size: 20px;
-	margin-left: 0px;
-	position: left;
-	top: +5px;
-}
-
-aside h3 {
-	margin-top: 50px;
-	font-size: 20;
-	font-weight: bold;
-}
-
-aside ul {
-	list-style: none;
-	float: left;
-}
-
-aside ul li {
-	color: #fff;
-	width: 100%;
-	height: 38px;
-	display: block;
-	margin-top: 20px;
-	margin-left: 0px;
-	transition: transform .3s ease;
-}
-
-aside ul li:hover, aside ul a:hover {
-	color: #eb5959;
-	text-decoration: none;
-	transform: scale(1.05);
-}
-
-/*.btn-primary{
-
-background-color: #BEBD7F;
-
-color: white;
-
-}
-
-.btn-primaru:hover,
-
-.btn-primary:focus,
-
-.btn-primary:visited{
-
-background-color: #BEBD7F;
-
-color: white;
-
-}*/
-
-main .features {
-	float: left;
-	color: #fff;
-	margin-top: 100px;
+/* Стили для текста. Это общий класс для красивого текста */
+.main-text {
 	text-align: center;
-	width: 75%;
+	font-size: 2vh;
+	font-style: normal;
+	font-weight: normal;
+	font-family: 'Inconsolata', monospace;
+
+	letter-spacing: 2px;
+	line-height: 5vh;
+	cursor: pointer;
+}
+
+.nav {
+/* 	white-space: nowrap; */
+}
+.nav ul {
+}
+
+.topnav, .topnav-auth {
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+	list-style: none;
+	margin: 0;
+	top: 0;
+	padding: 0;
+	height: 8vh;
+	z-index: 100;
+}
+
+/* Стили для панели навигации desktop */
+.topnav {
+	float: left;
+	display: block;
+	width: auto;
+}
+.topnav-auth {
+	float: left;
+	display: block;
+	width: auto;
+	margin-right: 0;
+	margin-left: auto;
+	border-left: 2px solid white;
+}
+/* Стили для  всех кнопок панели*/
+.topnav li, .topnav-auth li {
+ 	display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 13px 25px;
+    text-decoration: none;
+}
+
+.topnav li{
+}
+.topnav-auth li {
+
+}
+
+/* Стили для ссылок панели */
+.topnav li a, .topnav-auth li a{
+    text-decoration: none;
+    color: #f2f2f2;
+    float: left;
+}
+/* Изменения заднего фона кнопок при наведении */
+.topnav li:hover, .topnav-auth li:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Изменение цвета ссылок при наведении */
+.topnav li a:hover, .topnav-auth li a:hover{
+    color: black;
+}
+
+.scroll-up {
+	width: 2vh;
+	height: 2vh;
+}
+
+main{
+	margin-top: 6vh;
+}
+/* main */
+main .features {
+	position: relative;
+	color: #fff;
+	text-align: center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+main .pic_post {
+	display: inline-block;
+	height: 65vh;
+	width: 60vh;
+	border: 2px solid white;
+	border-radius: 20%;
+	margin: 0vh 6vh 6vh 6vh;
+}
+
+main .pic_post h3{
+	margin-top: 2vh;
 }
 
 main .features img{
@@ -85,24 +126,19 @@ main .features img{
 }
 
 main .features h1{
-	font-size: 60px;
-	float: center;
-	margin-left: auto;
-    margin-right: auto;
+	text-align: center;
 }
-main .features p {max-width: 400px; margin: 20px auto;}
 
 main .features_0 {
-	float: left;
-	color: #fff;
-	margin-top: 100px;
 	text-align: center;
-	width: 75%;
+	position: relative;
+	color: #fff;
+	text-align: center;
 }
 
 main .features_0 img{
-	max-width: 25%;
-	max-height: 25%;
+	max-width: 45vh;
+	max-height: 45vh;
 }
 
 main .features_0 h1{
@@ -113,9 +149,96 @@ main .features_0 h1{
 }
 main .features_0 p {max-width: 400px; margin: 20px auto;}
 
-main .alert-warning {
-	float: center;
-	margin-left: auto;
-    margin-right: auto;
-	width: 85%;
+
+
+
+* {
+   box-sizing: border-box;
+}
+
+.decor {
+   position: relative;
+   max-width: 400px;
+   margin: 50px auto 0;
+   background: white;
+   border-radius: 30px;
+}
+.form-left-decoration, .form-right-decoration {
+   content: "";
+   position: absolute;
+   width: 50px;
+   height: 20px;
+   background: var(--natural-yellow);
+   border-radius: 20px;
+}
+.form-left-decoration {
+   bottom: 60px;
+   left: -30px;
+}
+.form-right-decoration {
+   top: 60px;
+   right: -30px;
+}
+.form-left-decoration:before, .form-left-decoration:after, .form-right-decoration:before, .form-right-decoration:after {
+   content: "";
+   position: absolute;
+   width: 50px;
+   height: 20px;
+   border-radius: 30px;
+   background: white;
+}
+.form-left-decoration:before {
+   top: -20px;
+}
+.form-left-decoration:after {
+   top: 20px;
+   left: 10px;
+}
+.form-right-decoration:before {
+   top: -20px;
+   right: 0;
+}
+.form-right-decoration:after {
+   top: 20px;
+   right: 10px;
+}
+.circle {
+   position: absolute;
+   bottom: 80px;
+   left: -55px;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: white;
+}
+.form-inner {
+   padding: 50px;
+}
+.form-inner input, .form-inner textarea {
+   display: block;
+   width: 100%;
+   padding: 0 20px;
+   margin-bottom: 10px;
+   background: #E9EFF6;
+   line-height: 40px;
+   border-width: 0;
+   border-radius: 20px;
+   font-family: 'Roboto', sans-serif;
+}
+.form-inner input[type="submit"] {
+   margin-top: 30px;
+   background: var(--natural-yellow);
+   border-bottom: 4px solid var(--natural-yellow);
+   color: white;
+   font-size: 14px;
+}
+.form-inner textarea {
+   resize: none;
+}
+.form-inner h3 {
+   margin-top: 0;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   font-size: 24px;
+   color: #707981;
 }

@@ -4,10 +4,9 @@
 
 {% block content %}
 	<div class="features_0">
-		<h1>Рисунки</h1>
 		{% if pictures|length >= 1 %}
 			{% for el in pictures %}
-				<div class="alert alert-warning">
+				<div class="pic_post">
 					<h3>{{ el.title }}</h3>
 					<img src="{{ el.picture.url }}">
 					<p></p>

@@ -3,12 +3,15 @@
 {% block title %}Форма по добавлению рисунка{% endblock %}
 
 {% block content %}
-	<div class="features">
-		<h1>Форма по добавлению рисунка</h1>
-		<form method="post" enctype="multipart/form-data" class="form-group">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button class="btn btn-success" type="submit">Добавить рисунок</button>
-		</form>
-	</div>
+	<form method="post" enctype="multipart/form-data" class="decor">
+		{% csrf_token %}
+		<div class="form-left-decoration"></div>
+		<div class="form-right-decoration"></div>
+		<div class="circle"></div>
+		<div class="form-inner">
+		<h3>Поделиться рисунком</h3>
+		{{ form }}
+		<input type="submit" value="Отправить">
+		</div>
+	</form>
 {% endblock %}
