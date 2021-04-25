@@ -1,5 +1,5 @@
 from django.forms import TextInput, ClearableFileInput
-from django.forms import HiddenInput
+from django.forms import HiddenInput, Textarea
 from django.forms import ModelForm
 from .models import Grading
 from .models import Picture
@@ -13,22 +13,10 @@ class PictureForm(ModelForm):
 
         widgets = {
             "current_user": HiddenInput(),
-            "title": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Название рисунка'
-            }),
-            "picture": ClearableFileInput(attrs={
-                'class': 'form-control-file',
-                'placeholder': 'Загрузка рисунка'
-            }),
-            "anons": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Краткое описание рисунка'
-            }),
-            "full_text": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Полное описание рисунка'
-            }),
+            "title": TextInput(),
+            "picture": ClearableFileInput(),
+            "anons": TextInput(),
+            "full_text": Textarea(),
             "date": HiddenInput(),
         }
 

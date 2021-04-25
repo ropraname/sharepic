@@ -3,15 +3,38 @@
 {% block title %}Форма по добавлению рисунка{% endblock %}
 
 {% block content %}
-	<form method="post" enctype="multipart/form-data" class="decor">
-		{% csrf_token %}
-		<div class="form-left-decoration"></div>
-		<div class="form-right-decoration"></div>
-		<div class="circle"></div>
-		<div class="form-inner">
-		<h3>Поделиться рисунком</h3>
-		{{ form }}
-		<input type="submit" value="Отправить">
+<div class="share-form">
+	<div class="container">
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 left">
+					<h1 class="main-title">Поделиться рисунком</h1>
+				</div>
+
+				<div class="col-lg-6 col-md-12 col-sm-12 right">
+					<h4 class="main-text">Какое название рисунка?</h4>
+					<div class="form-group">
+						<input type="text" class="form-control" name="{{ form.title.name }}" id="id_{{ form.title.name }}" placeholder="Название рисунка">
+					</div>
+					<h4 class="main-text">Загрузи файл рисунка</h4>
+					<div class="form-group">
+						<label for="file-upload" class="custom-file-upload">
+    						<i class="fa fa-upload"></i>Загрузить рисунок
+						</label>
+						<input id="file-upload" type="file" class="form-control-file" name="{{ form.picture.name }}" id="id_{{ form.picture.name }}" value="{{ form.picrute.value }}" placeholder="Прикрепить рисунок">
+					</div>
+					<h4 class="main-text">Какое описание рисунка в кратце?</h4>
+					<div class="form-group">					<input type="text" class="form-control" name="{{ form.anons.name }}" id="id_{{ form.anons.name }}" value="{{ form.anons.value }}" placeholder="Краткое описание">
+					</div>
+					<h4 class="main-text">Какое описание рисунка?</h4>
+					<div class="form-group">					<textarea class="form-control form-control-lg" name="{{ form.full_text.name }}" id="id_{{ form.full_text.name }}" value="{{ form.full_text.value }}" placeholder="Описание рисунка">
+					</textarea>
+				</div>
+				<input type="submit" class="btn btn-secondary btn-block" value="Поделиться" name="">
+			</div>
 		</div>
 	</form>
+</div>
+</div>
 {% endblock %}
