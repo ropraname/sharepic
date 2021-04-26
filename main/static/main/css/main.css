@@ -56,7 +56,9 @@ body {
   margin-left: 1em;
 }
 
-
+/* .nav-first {
+  background: white;
+} */
 /* Стили для ссылок панели */
 
 .topnav li a,
@@ -76,6 +78,8 @@ body {
 
 
 /* Изменение цвета ссылок при наведении */
+
+
 
 .topnav li a:hover,
 .topnav-auth li a:hover {
@@ -384,16 +388,33 @@ main .features .right .date-block {
     display: none;
   }
   .nav-small-main {
-    height: 6vh;
+    height: 7.5vh;
+    width: auto;
   }
   .nav-small li {
-    height: 6vh;
-    width: auto;
   }
   .nav-center-logo h4 a {
     color: white;
     font-size: 1vh;
     font-weight: bold;
+  }
+  .icon-link {
+    height: 7vh;
+    width: 7vh;
+  }
+  .topnav-icon li a,
+  .topnav-auth-icon li a {
+    text-decoration: none;
+    color: white;
+    transition: opacity 124ms linear, transform 124ms linear;
+  }
+
+  .topnav-icon li a:hover,
+  .topnav-auth-icon li a:hover {
+    color: #164A41;
+    background: white;
+    border-radius: 50%;
+    transform: scale(1.05);
   }
 }
 

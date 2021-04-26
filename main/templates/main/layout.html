@@ -54,26 +54,42 @@
 		</div>
 	</nav>
 
-	<nav class="navbar navbar-expand fixed-bottom nav nav-small nav-small-main">
-		<div class="collapse navbar-collapse" id="navbarSupportedContent container">
-			<div class="collapse navbar-collapse col nav-first row">
-				<ul class="navbar-nav topnav">
-					<li class="nav-item">
-						<a href="{% url 'home' %}" class="nav-link main-text compressing-text " class="active" id="home"><i class="bi bi-house bi-4x"></i></a>
+	<nav class="navbar navbar-expand fixed-bottom nav nav-small nav-small-main ">
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+			<div class="collapse navbar-collapse nav-first">
+				<ul class="navbar-nav topnav-icon container">
+					<li class="nav-item col-3">
+						<a href="{% url 'home' %}" class="nav-link main-text compressing-text icon-link" class="active" id="home">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+								<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+							</svg>
+						</a>
+					</li>
+					<li class="nav-item col-3">
+						<a href="{% url 'view_home' %}" class="nav-link main-text compressing-text icon-link" id="lent">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-view-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  								<path fill-rule="evenodd" d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"/>
+							</svg>
+						</a>
+					</li>
+					<li class="nav-item col-3">
+						<a href="{% url 'upload' %}" class="nav-link main-text compressing-text icon-link" id="share">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  								<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  								<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+							</svg>
+						</a>
+					</li>
+					<li class="nav-item col-3">
+						<a href="{% url 'view_scoreboard' %}" class="nav-link main-text compressing-text icon-link" id="scoreboard">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-award" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  								<path fill-rule="evenodd" d="M9.669.864L8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193l-1.51-.229L8 1.126l-1.355.702-1.51.229-.684 1.365-1.086 1.072L3.614 6l-.25 1.506 1.087 1.072.684 1.365 1.51.229L8 10.874l1.356-.702 1.509-.229.684-1.365 1.086-1.072L12.387 6l.248-1.506-1.086-1.072-.684-1.365z"/>
+  								<path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+							</svg>
+						</a>
+					</li>
 
-					</li>
-					<li class="nav-item">
-						<a href="{% url 'view_home' %}" class="nav-link main-text compressing-text" id="lent"><i class="bi bi-view-list"></i></a>
-					</li>
-					<li class="nav-item">
-						<a href="{% url 'upload' %}" class="nav-link main-text compressing-text" id="share"><i class="bi bi-pencil-square"></i></a>
-					</li>
-					<li class="nav-item">
-						<a href="{% url 'view_scoreboard' %}" class="nav-link main-text compressing-text" id="scoreboard"><i class="bi bi-award"></i></a>
-					</li>
-					<li class="nav-item">
-						<a href="{% url 'view_profile' %}" class="nav-link main-text compressing-text" id="profile"><i class="bi bi-file-person"></i></a>
-					</li>
 				</ul>
 			</div>
 		</div>	
@@ -82,15 +98,42 @@
 	<nav class="navbar navbar-expand fixed-top nav nav-small nav-small-auth">
 		<div class="collapse navbar-collapse " id="navbarSupportedContent">
 			<div class="collapse navbar-collapse col-sm-12 col-md-12 center-block nav-second">
-				<ul class="navbar-nav mr-4 topnav-auth">
-					<li class="nav-item">
-						<a href="{% url 'login' %}" class="nav-link main-text compressing-text" id="login" class="auth"><i class="bi bi-door-open"></i></a>
+				<ul class="navbar-nav topnav-auth-icon container">
+					<li class="nav-item col-3">
+						<a href="{% url 'login' %}" class="nav-link main-text compressing-text icon-link" id="login" class="auth">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-door-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+	  							<path fill-rule="evenodd" d="M1 15.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM11.5 2H11V1h.5A1.5 1.5 0 0 1 13 2.5V15h-1V2.5a.5.5 0 0 0-.5-.5z"/>
+	  							<path fill-rule="evenodd" d="M10.828.122A.5.5 0 0 1 11 .5V15h-1V1.077l-6 .857V15H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117z"/>
+	  							<path d="M8 9c0 .552.224 1 .5 1s.5-.448.5-1-.224-1-.5-1-.5.448-.5 1z"/>
+							</svg>
+						</a>
 					</li>
-					<li class="nav-item">
-						<a href="{% url 'registr' %}" class="nav-link main-text compressing-text" id="registr" class="auth"><i class="bi bi-person-plus"></i></a>
+					<li class="nav-item col-3">
+						<a href="{% url 'registr' %}" class="nav-link main-text compressing-text icon-link" id="registr" class="auth">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-person-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+	  							<path fill-rule="evenodd" d="M11 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM1.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM6 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm4.5 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+	  							<path fill-rule="evenodd" d="M13 7.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
+							</svg>
+						</a>
 					</li>
-					<li class="nav-item">
-						<a href="{% url 'logout' %}" class="nav-link main-text compressing-text" id="logout" class="auth"><i class="bi bi-door-closed"></i></a>
+					<li class="nav-item col-3">
+						<a href="{% url 'logout' %}" class="nav-link main-text compressing-text icon-link" id="logout" class="auth">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-door-closed" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  								<path fill-rule="evenodd" d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2zm1 0v13h8V2H4z"/>
+  								<path d="M7 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+  								<path fill-rule="evenodd" d="M1 15.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+							</svg>
+						</a>
+					</li>
+
+					<li class="nav-item col-3">
+						<a href="{% url 'view_profile' %}" class="nav-link main-text compressing-text text-center icon-link" id="profile">
+							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-file-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  								<path fill-rule="evenodd" d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4z"/>
+  								<path d="M13.784 14c-.497-1.27-1.988-3-5.784-3s-5.287 1.73-5.784 3h11.568z"/>
+  								<path fill-rule="evenodd" d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+							</svg>
+						</a>
 					</li>
 				</ul>
 			</div>
