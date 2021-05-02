@@ -6,10 +6,10 @@
 			<form method="post" enctype="multipart/form-data">
 				{% csrf_token %}
 				<div class="row">
-					<div class="col-lg-7 col-md-4 col-sm-12 left">
-						<h1 class="main-title">Авторизуйтесь<br><br>для использования сайта</h1> 
+					<div class="col-lg-7 col-md-10 col-sm-10 left offset-sm-1 offset-md-1 offset-lg-0">
+						<h1 class="main-title title-compressing">Авторизуйтесь<br><br>для использования сайта</h1> 
 					</div>
-					<div class="col-lg-5 col-md-8 col-sm-12 right">
+					<div class="col-lg-5 col-md-10 col-sm-10 right offset-sm-1 offset-md-1 offset-lg-0">
 						<div class="form-group">
 							<input type="text" class="form-control" name="{{ form.username.name }}" id="id_{{ form.username.name }}" placeholder="Имя пользователя">
 						</div>

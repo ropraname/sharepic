@@ -3,19 +3,19 @@
 {% block title %}{{ picture_data.title }}{% endblock %}
 
 {% block content %}
-	<div class="features container">
+	<div class="features container detail-view">
 		<div class="row">
 			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 left text-center">
-				<h4 id="username-field-detail" class="username-block main-text">{{ picture_data.current_user }}</h4>
+				<h4 id="username-field-detail" class="username-block main-text detail-text">{{ picture_data.current_user }}</h4>
 				<img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}">	
 			</div>
 
-			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 right text-center">
-				<h2 class="title-block main-title">{{ picture_data.title }}</h2>
-				<h4 class="anons-block main-text">{{ picture_data.anons }}</h4>
-				<h4 class="full_text-block main-text">{{ picture_data.full_text }}</h4>
-				<h4 class="rating-block main-text">Скоро тут появится система для оценки рисунков</h4>
-				<h4 class="date-block main-text">{{ picture_data.date }}</h4>
+			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 right text-center detail-text">
+				<h2 class="title-block main-title detail-text">{{ picture_data.title }}</h2>
+				<h4 class="anons-block main-text detail-text">{{ picture_data.anons }}</h4>
+				<h4 class="full_text-block main-text detail-text">{{ picture_data.full_text }}</h4>
+				<h4 class="rating-block main-text detail-text">Скоро тут появится система для оценки рисунков</h4>
+				<h4 class="date-block main-text detail-text">{{ picture_data.date }}</h4>
 			</div>
 		</div>
 	</div>

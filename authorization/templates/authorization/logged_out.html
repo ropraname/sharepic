@@ -3,8 +3,18 @@
 {% block title %}Выход из аккаунта{% endblock %}
 
 {% block content %}
-	<div class="features">
-		<h1>Вы вышли из аккаунта</h1>
-		<p>Вы можете войти заново<br><a href="{% url 'login' %}" class="btn btn-primary">Вход</a></p>
+	<div class="features share-form logged-out">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 col-md-10 col-sm-10 left offset-sm-1 offset-md-1 offset-lg-0">
+					<h1 class="main-title title-compressing">Вы вышли из аккаунта</h1>
+				</div>
+				
+				<div class="col-lg-5 col-md-10 col-sm-10 right offset-sm-1 offset-md-1 offset-lg-0">
+					<a href="{% url 'login' %}" class="btn btn-primary btn-block">Вход</a>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 {% endblock %}
