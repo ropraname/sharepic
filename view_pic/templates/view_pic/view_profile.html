@@ -3,7 +3,10 @@
 {% block title %}{{ user }}{% endblock %}
 
 {% block content %}
-	<div class="container">
+	<div class="username-title">
+		<h2 class="main-title bold-text white_text username-profile">{{ user }}</h2>
+	</div>
+	<div class="container pic_post-container">
 		<div class="features_0 row pictures_lent profile" id="cont_compressed_blocks">
 			{% if pictures|length >= 1 %}
 				{% for el in pictures %}

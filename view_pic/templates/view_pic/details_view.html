@@ -3,22 +3,54 @@
 {% block title %}{{ picture_data.title }}{% endblock %}
 
 {% block content %}
-	<div class="features container detail-view">
-		<div class="row">
-			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 left text-center">
-				<a href="{% url 'view_profile' %}?user_to_see={{ picture_data.current_user }}" class="profile_url">
-					<h4 id="username-field-detail" class="username-block main-text detail-text">{{ picture_data.current_user }}</h4>
-				</a>
-				<img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}">	
-			</div>
+<div class="features container detail-view">
+	<div class="row">
+		<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 left text-center">
+			<a href="{% url 'view_profile' %}?user_to_see={{ picture_data.current_user }}" class="profile_url">
+				<h4 id="username-field-detail" class="username-block main-text detail-text">{{ picture_data.current_user }}</h4>
+			</a>
+			<img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}">	
+		</div>
 
-			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 right text-center detail-text">
-				<h2 class="title-block main-title detail-text">{{ picture_data.title }}</h2>
-				<h4 class="anons-block main-text detail-text">{{ picture_data.anons }}</h4>
-				<h4 class="full_text-block main-text detail-text">{{ picture_data.full_text }}</h4>
-				<h4 class="rating-block main-text detail-text">Скоро тут появится система для оценки рисунков</h4>
-				<h4 class="date-block main-text detail-text">{{ picture_data.date }}</h4>
+		<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 right text-center detail-text">
+			<h2 class="title-block main-title detail-text">{{ picture_data.title }}</h2>
+			<h4 class="anons-block main-text detail-text">{{ picture_data.anons }}</h4>
+			<h4 class="full_text-block main-text detail-text">{{ picture_data.full_text }}</h4>
+			{% if not_evaluate %}
+			<div class="rating-block main-text detail-text">
+				<form method="post" action="{% url 'picture-detail' picture_data.id %}">
+					{% csrf_token %}
+					<div class="form-group rate-range-group">
+						<h5 class="label-form bold-text">Оцени глубину смысла</h5>
+						<input type="range" class="custom-range min="0" max="10" step="1" bold-text-input" name="{{ grading_form.rate_content_meaning.name }}" id="rate-content-meaning-range" value="{{ grading_form.rate_content_meaning.value }}" placeholder="Краткое описание">
+					</div>
+
+					<div class="form-group rate-range-group">
+						<h5 class="label-form bold-text">Оцени технику</h5>
+						<input type="range" class="custom-range min="0" max="10" step="1" bold-text-input" name="{{ grading_form.rate_draw_technique.name }}" id="rate-technique-range" value="{{ grading_form.rate_draw_technique.value }}">
+					</div>
+
+					<div class="form-group rate-range-group">
+						<h5 class="label-form bold-text">Оцени оригинальность</h5>
+						<input type="range" class="custom-range min="0" max="10" step="1" bold-text-input input-range" name="{{ grading_form.rate_originality.name }}" id="rate-originality-range" value="{{ grading_form.rate_originality.value }}" placeholder="Краткое описание">
+					</div>
+					{% if rate == True %}
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+						<path d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z"/>
+					</svg>
+					{% else %}
+					<button class="btn btn-secondary btn-rate-range bold-text-submit" type="submit">Оценить</button>
+					{% endif %}
+				</form>
 			</div>
+			{% endif %}
+			<h4 class="rating-block main-text detail-text">
+				Смысловая ценность: {{ meaning }} | среднее: {{ mid_meaning }} <br>
+				Техника исполнения: {{ technique }} | среднее: {{ mid_technique }} <br>
+				Оригинальность идеи: {{ originality }} | среднее: {{ mid_originality }}
+			</h4>
+			<h4 class="date-block main-text detail-text">{{ picture_data.date }}</h4>
 		</div>
 	</div>
+</div>
 {% endblock %}

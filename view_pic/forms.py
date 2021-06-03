@@ -31,15 +31,15 @@ class GradingForm(ModelForm):
             "evaluating_user": HiddenInput(),
             "rate_content_meaning": TextInput(attrs={
                 'class': 'custom-range',
-                'placeholder': 'Название рисунка'
+                'placeholder': 'Смысловая ценность'
             }),
             "rate_draw_technique": TextInput(attrs={
                 'class': 'custom-range',
-                'placeholder': 'Загрузка рисунка'
+                'placeholder': 'Техника'
             }),
             "rate_originality": TextInput(attrs={
                 'class': 'custom-range',
-                'placeholder': 'Краткое описание рисунка'
+                'placeholder': 'Оригинальность'
             }),
             "picture_id": HiddenInput(),
         }

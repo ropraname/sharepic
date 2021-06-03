@@ -3,16 +3,19 @@
 {% block title %}Ваш профиль{% endblock %}
 
 {% block content %}
+	<div class="username-title">
+		<h2 class="main-title bold-text white_text username-profile">{{ user }}</h2>
+	</div>
 	<div class="container">
 		<div class="features_0 row pictures_lent profile" id="cont_compressed_blocks">
 			{% if pictures|length >= 1 %}
-				{% for el in pictures %}
-					<div class="pic_post col-xl-3 col-lg-4 col-md-6 col-sm-12 text-center block_to_compress">
-						<a href="{% url 'picture-detail' el.id %}"><img src="{{ el.picture.url }}" class="img-fluid"></a>
-					</div>			
-				{% endfor %}
+			{% for el in pictures %}
+			<div class="pic_post col-xl-3 col-lg-4 col-md-6 col-sm-12 text-center block_to_compress">
+				<a href="{% url 'picture-detail' el.id %}"><img src="{{ el.picture.url }}" class="img-fluid"></a>
+			</div>			
+			{% endfor %}
 			{% else %}
-				<h1 class="main-title title-compressing col-12">Вы еще ничего не выложили</h1>
+			<h1 class="main-title title-compressing col-12 bold-text white_text">Вы еще ничего не выложили</h1>
 			{% endif %}
 		</div>
 	</div>
