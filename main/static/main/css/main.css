@@ -17,6 +17,26 @@ body {
 }
 
 /* Стили для текста. Это общий класс для красивого текста */
+.mainpage-text{
+  text-align: center;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: bold;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 2px;
+  line-height: 3vh;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 4vh;
+  margin-top: 4vh;
+}
+.guide-text{
+  border-bottom: 2px solid #F1B24A;
+  border-top: 2px solid #F1B24A;
+  height: auto;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
 
 .main-text {
   text-align: center;
@@ -81,6 +101,7 @@ body {
     background-color: white;
     color: black;
     transform: scale(1.05);
+    border-radius: 20px;
   }
 
 
@@ -153,16 +174,23 @@ body {
   }
 
   .share-form .right .btn-secondary {
-    background: #F1B24A;
+    background: none;
     color: var(--white);
-    border: 0;
+    border-radius: 10px;
+    border: 2px solid white;
     max-width: 200px;
     font-weight: bolder;
     font-family: 'Inconsolata', monospace;
   }
+  .share-form .right .btn-secondary:hover{
+    transform: scale(1.05);
+    transition: opacity 124ms linear, transform 124ms linear;
+    background: white;
+    color: black;
+  }
 
   .share-form .right .form-control::placeholder {
-    color: gray;
+    color: white;
     font-family: 'Inconsolata', monospace;
     font-size: 1.85vh;
     font-weight: bolder;
@@ -248,7 +276,21 @@ body {
     font-size: 1.85vh;
     height: auto;
     font-weight: bolder;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
     font-family: 'Inconsolata', monospace;
+  }
+  .bold-text-input::placeholder{
+    color: white;
+  }
+  .bold-text-input:focus{
+    background: transparent;
+    color: white;
+  }
+  .bold-text-input:hover{
+    transform: scale(1.05);
+    transition: opacity 124ms linear, transform 124ms linear;
   }
   .bold-text-submit {
     height: auto;
@@ -267,8 +309,8 @@ body {
   .custom-file-upload {
     border: 2px solid white;
     border-radius: 10px 10px 10px 10px;
-    background: white;
-    color: gray;
+    background: none;
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-size: 12pt;
@@ -277,6 +319,10 @@ body {
     font-family: 'Inconsolata', monospace;
     letter-spacing: 2px;
     padding-right: 0.5vh;
+  }
+  .custom-file-upload:hover{
+    transform: scale(1.05);
+    transition: opacity 124ms linear, transform 124ms linear;
   }
 
   .fa-upload {
@@ -295,21 +341,25 @@ body {
 
 
   /* main */
-
   .btn-secondary{
-    background: #F1B24A;
+    background: none;
     border: 0;
+
     max-width: 200px;
     height: auto;
   }
   .btn-secondary:hover{
     opacity: 1.2;
-    transform: scale(1.05);
-    background: #F1B24A;
+    transform: scale(1.2);
     border: 0;
+    background: none;
   }
-
-
+  .btn-lg{
+    background: none;
+  }
+  .btn-lg:hover{
+    background: none;
+  }
   .form-profile {
     margin-bottom: 0;
   }
@@ -354,8 +404,8 @@ body {
     content: attr(data-title);
   }
 
-/* progile */
-.username-block {
+  /* progile */
+  .username-block {
     font-size: 3vh;
     font-weight: bold;
     line-height: 4vh;
@@ -439,6 +489,7 @@ body {
   .rate-range-group{
     margin: 0;
     height: 6vh;
+    padding-top: 1vh;
   }
 
 
@@ -456,6 +507,14 @@ body {
   .btn-rate-range{
     margin-top: 1vh;
     margin-bottom: 2vh;
+    color: black;
+    border: 2px solid black;
+  }
+  .btn-rate-range:hover{
+    color: black;
+    border: 2px solid black;
+    transform: scale(1.1);
+    transition: opacity 124ms linear, transform 124ms linear;
   }
   .rate_accept{
     background: green;
@@ -496,33 +555,42 @@ body {
   .dropdown{
     margin-bottom: 2vh;
   }
+
   .dropdown-item{
     background: #F1B24A
     color: black;
   }
   .dropdown-item:hover{
-    background: #F1B24A;
-    color: white;
+    background: white;
+    color: black;
+    border: 2px solid black;
     border-radius: 15px;
     transition: opacity 124ms linear, transform 124ms linear;
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
   }
+  .dropdown .btn-lg{
+    border-radius: 20px;
+    border: 2px solid white;
+    background: none;
+  }
   .dropdown-toggle{
-    border: 0;
-    background: #F1B24A;
+    background: none;
+    color: white;
   }
   .dropdown-toggle:hover{
-    background: #164A41;
+    background: white;
+    color: black;
     transition: opacity 124ms linear, transform 124ms linear;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    user-select: none;
-    border: none;
-    outline: none;
-    transition: background 9999999s;
+  }
+  .dropdown-toggle:focus{
+    background: white;
+    color: black;
+    
   }
   .dropdown-menu{
     background: white;
@@ -679,6 +747,9 @@ body {
 
     .detail-view {
       margin-top: 7vw;
+    }
+    .detail-view .btn-secondary{
+      border: 2px solid black;
     }
     .detail-view .right {
       margin-bottom: 7vw;

@@ -8,7 +8,7 @@
 	<form action="" method="post" class="form-profile">
 		{% csrf_token %}
 		<div class="form-row align-items-center justify-content-center">
-			<div class="col-auto">
+			<div class="col-auto input-block-username">
 				<label class="sr-only" for="inlineFormInputGroup">Имя пользователя</label>
 				<div class="input-group mb-2 username-form">
 					<div class="input-group-prepend">
@@ -17,7 +17,7 @@
 					<input type="text" class="form-control bold-text-input" id="username_input" placeholder="Имя пользователя" name="username">
 				</div>
 			</div>
-			<div class="col-auto">
+			<div class="col-auto search-group">
 				<button type="submit" class="btn btn-secondary mb-2 text-center btn-lg">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
 						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -32,7 +32,7 @@
 	</form>
 	<div class="row align-items-center justify-content-center">
 		<div class="dropdown col-auto">
-			<button type="button" class="btn btn-primary dropdown-toggle btn-lg bold-text text-center" data-toggle="dropdown">
+			<button type="button" class="btn btn dropdown-toggle btn-lg bold-text text-center" data-toggle="dropdown">
 				Фильтры
 			</button>
 			<div class="dropdown-menu">

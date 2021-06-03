@@ -33,7 +33,7 @@ def upload(request):
 
 @login_required
 def view_home(request):
-    pictures = Picture.objects.all()
+    pictures = Picture.objects.all().order_by('-date')
     if request.method == 'POST':
         global profile_name
         profile_name = str(request.POST['username'])
@@ -47,7 +47,7 @@ def view_home(request):
 @login_required
 def view_your_profile(request):
     user = request.user
-    all_pictures = Picture.objects.all()
+    all_pictures = Picture.objects.all().order_by('-date')
     user_pictures = []
     for picture in all_pictures:
         if picture.current_user == user:
@@ -60,7 +60,7 @@ def view_your_profile(request):
 
 @login_required
 def view_profile(request):
-    all_pictures = Picture.objects.all()
+    all_pictures = Picture.objects.all().order_by('-date')
     user_pictures = []
     try:
         user = request.GET['user_to_see']
@@ -204,6 +204,9 @@ def picture_detail(request, pk):
             'originality': originality_sum,
             'mid_originality': mid_originality
         })
+
+    if user == picture.current_user:
+        data.update({'is_my': True})
     return render(request, 'view_pic/details_view.html', data)
 
 def sort_pictures(num_of_sort, pictures_with_rating, pictures_with_rating_to_sort):

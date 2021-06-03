@@ -9,7 +9,11 @@
 			<a href="{% url 'view_profile' %}?user_to_see={{ picture_data.current_user }}" class="profile_url">
 				<h4 id="username-field-detail" class="username-block main-text detail-text">{{ picture_data.current_user }}</h4>
 			</a>
-			<img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}">	
+			{% if is_my %}
+				<a href="{% url 'picture-update' picture_data.id %}"><img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}"></a>
+			{% else %}
+				<img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}">
+			{% endif %}
 		</div>
 
 		<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 right text-center detail-text">
@@ -21,12 +25,12 @@
 				<form method="post" action="{% url 'picture-detail' picture_data.id %}">
 					{% csrf_token %}
 					<div class="form-group rate-range-group">
-						<h5 class="label-form bold-text">Оцени глубину смысла</h5>
+						<h5 class="label-form bold-text">Оцени смысловую ценность</h5>
 						<input type="range" class="custom-range min="0" max="10" step="1" bold-text-input" name="{{ grading_form.rate_content_meaning.name }}" id="rate-content-meaning-range" value="{{ grading_form.rate_content_meaning.value }}" placeholder="Краткое описание">
 					</div>
 
 					<div class="form-group rate-range-group">
-						<h5 class="label-form bold-text">Оцени технику</h5>
+						<h5 class="label-form bold-text">Оцени технику исполнения</h5>
 						<input type="range" class="custom-range min="0" max="10" step="1" bold-text-input" name="{{ grading_form.rate_draw_technique.name }}" id="rate-technique-range" value="{{ grading_form.rate_draw_technique.value }}">
 					</div>
 
