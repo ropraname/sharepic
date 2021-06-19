@@ -35,12 +35,12 @@ def view_home(request):
 
 @login_required
 def view_profile(request):
-    return render(request, 'view_pic/view_profile.html')
+    return render(request, 'view_pic/dummy.html')
 
 
 @login_required
 def view_scoreboard(request):
-    return render(request, 'view_pic/view_scoreboard.html')
+    return render(request, 'view_pic/dummy.html')
 
 
 @method_decorator(login_required, name="dispatch")

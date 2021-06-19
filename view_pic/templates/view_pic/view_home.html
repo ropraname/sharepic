@@ -3,14 +3,17 @@
 {% block title %}Новости на сайте{% endblock %}
 
 {% block content %}
-	<div class="features">
+	<div class="features_0">
 		<h1>Рисунки</h1>
 		{% if pictures|length >= 1 %}
 			{% for el in pictures %}
 				<div class="alert alert-warning">
 					<h3>{{ el.title }}</h3>
-					<p>{{ el.anons }}</p>
-					<a href="{% url 'picture-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
+					<img src="{{ el.picture.url }}">
+					<p></p>
+					<h4>{{ el.anons }}</h4>
+					<p></p>
+					<a href="{% url 'picture-detail' el.id %}" class="btn btn-warning">Посмотреть</a>
 				</div>			
 			{% endfor %}
 		{% else %}

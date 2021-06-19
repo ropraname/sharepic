@@ -79,6 +79,11 @@ main .features {
 	width: 75%;
 }
 
+main .features img{
+	max-width: 50%;
+	max-height: 50%;
+}
+
 main .features h1{
 	font-size: 60px;
 	float: center;
@@ -86,3 +91,31 @@ main .features h1{
     margin-right: auto;
 }
 main .features p {max-width: 400px; margin: 20px auto;}
+
+main .features_0 {
+	float: left;
+	color: #fff;
+	margin-top: 100px;
+	text-align: center;
+	width: 75%;
+}
+
+main .features_0 img{
+	max-width: 25%;
+	max-height: 25%;
+}
+
+main .features_0 h1{
+	font-size: 60px;
+	float: center;
+	margin-left: auto;
+    margin-right: auto;
+}
+main .features_0 p {max-width: 400px; margin: 20px auto;}
+
+main .alert-warning {
+	float: center;
+	margin-left: auto;
+    margin-right: auto;
+	width: 85%;
+}

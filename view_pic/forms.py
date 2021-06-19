@@ -1,8 +1,8 @@
-from .models import Grading
-from .models import Picture
-from django.forms import TextInput, DateTimeInput, ClearableFileInput
+from django.forms import TextInput, ClearableFileInput
 from django.forms import HiddenInput
 from django.forms import ModelForm
+from .models import Grading
+from .models import Picture
 
 
 class PictureForm(ModelForm):

@@ -5,10 +5,14 @@
 {% block content %}
 	<div class="features">
 		<div class="alert alert-dark">
-			<h1>{{ picture_data.title }}</h1>
-			<p> {{ picture_data.date }}</p>
-			<p>{{ picture_data.full_text }}</p>
+			<h2>{{ picture_data.title }}</h1>
+			<p></p>
+			<h4>Рисунок пользователя - <big>{{ picture_data.current_user }}</big></h2>
 			<img src="{{ picture_data.picture.url }}">
+			<p></p>
+			<h4>{{ picture_data.full_text }}</h3>
+			<p>-</p>
+			<p> {{ picture_data.date }}</p>
 		</div>
 	</div>
 {% endblock %}

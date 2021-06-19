@@ -8,7 +8,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
-        super(LoginForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({
             'class': 'form-control',
             'placeholder': 'Имя пользователя'})
@@ -25,7 +25,7 @@ class RegistrForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
-        super(RegistrForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['email'].widget.attrs.update({
             'class': 'form-control',
             'placeholder': 'Email'})
