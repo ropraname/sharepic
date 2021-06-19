@@ -1,22 +1,20 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Новости на сайте{% endblock %}
+{% block title %}Лента{% endblock %}
 
 {% block content %}
-	<div class="features_0">
-		{% if pictures|length >= 1 %}
-			{% for el in pictures %}
-				<div class="pic_post">
-					<h3>{{ el.title }}</h3>
-					<img src="{{ el.picture.url }}">
-					<p></p>
-					<h4>{{ el.anons }}</h4>
-					<p></p>
-					<a href="{% url 'picture-detail' el.id %}" class="btn btn-warning">Посмотреть</a>
-				</div>			
-			{% endfor %}
-		{% else %}
-			<p>Нет записей</p>
-		{% endif %}
+	<div class="container">
+		<div class="features_0 row">
+			{% if pictures|length >= 1 %}
+				{% for el in pictures %}
+					<div class="pic_post col-xl-3 col-lg-4 col-md-6 col-sm-12 text-center">
+						<a href="{% url 'picture-detail' el.id %}"><img src="{{ el.picture.url }}" class="img-fluid"></a>
+						<h4>{{ el.current_user }}</h4>
+					</div>			
+				{% endfor %}
+			{% else %}
+				<p>Нет записей</p>
+			{% endif %}
+		</div>
 	</div>
 {% endblock %}

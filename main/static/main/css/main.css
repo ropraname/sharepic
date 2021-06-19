@@ -9,6 +9,7 @@
 
 body {
   background: linear-gradient(to right, var(--dark-green), var(--light-green));
+  overflow-x: hidden;
 }
 
 
@@ -109,6 +110,10 @@ body {
   width: auto;
   color: white;
   border-right: 2px solid #F1B24A;
+}
+
+.share-form .left .description {
+  font-size: 1.5em;
 }
 
 .share-form .right h4 {
@@ -219,65 +224,128 @@ input[type="file"] {
 }
 
 main {
-  margin-top: 13vh;
+  margin-top: 11vh;
 }
 
 
 /* main */
 
+main .features_0 .img-fluid {
+  border-radius: 20px;
+  width: 300px;
+  height: auto;
+  margin-bottom: 3vh;
+  opacity: 1;
+  transition: opacity 124ms linear, transform 124ms linear;
+}
+
+main .features_0 .pic_post {
+  position: relative;
+}
+
+main .features_0 .pic_post h4 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 1vh;
+  width: 100%;
+  display: none;
+  opacity: 1;
+  transition: opacity 124ms linear, transform 124ms linear;
+}
+
+main .features_0 .pic_post h4:hover {
+  display: block;
+}
+
+main .features_0 .img-fluid:hover {
+  opacity: 1.2;
+  transform: scale(1.05);
+}
+
+main .features_0 .img-fluid:hover::after {
+  content: attr(data-title);
+}
+
+
 main .features {
-  position: relative;
-  color: #fff;
+  margin-bottom: 7vh;
+}
+main .features .left .picture-block {
+  display: block;
+  border-radius: 20px;
+}
+
+main .features .left .username-block {
+  font-size: 3vh;
+  font-weight: bold;
+  line-height: 4vh;
+  height: 4vh;
+  cursor: default;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+main .features .right .title-block {
+  display: block;
+  background: white;
+  border-radius: 20px;
+  font-size: 3vh;
+  line-height: 4vh;
+  height: 4vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: default;
+}
+
+main .features .right .anons-block {
+  font-size: 2vh;
+  line-height: auto;
+  height: 9vh;
+  cursor: default;
+  font-weight: bold;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 1vh;
+}
+
+main .features .right .full_text-block {
   text-align: center;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  background: white;
+  border-radius: 20px;
+  font-size: 2vh;
+  letter-spacing: 1px;
+  line-height: auto;
+  cursor: default;
+  height: 36vh;
 }
 
-main .pic_post {
-  display: inline-block;
-  height: 65vh;
-  width: 60vh;
-  border: 2px solid white;
-  border-radius: 20%;
-  margin: 0vh 6vh 6vh 6vh;
-}
-
-main .pic_post h3 {
-  margin-top: 2vh;
-}
-
-main .features img {
-  max-width: 50%;
-  max-height: 50%;
-}
-
-main .features h1 {
+main .features .right .rating-block {
+  display: block;
   text-align: center;
+  font-size: 2vh;
+  letter-spacing: 2px;
+  line-height: auto;
+  height: 11vh;
+  background: white;
+  border-radius: 20px;
+  cursor: default;
 }
-
-main .features_0 {
+main .features .right .date-block {
+  display: block;
   text-align: center;
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
-main .features_0 img {
-  max-width: 45vh;
-  max-height: 45vh;
-}
-
-main .features_0 h1 {
-  font-size: 60px;
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-main .features_0 p {
-  max-width: 400px;
-  margin: 20px auto;
+  font-size: 2vh;
+  letter-spacing: 2px;
+  line-height: 4vh;
+  height: 4vh;
+  background: white;
+  border-radius: 20px;
+  cursor: default;
 }
 
 @media screen and (max-width: 1500px) {
@@ -308,5 +376,29 @@ main .features_0 p {
     color: white;
     border-bottom: 2px solid #F1B24A;
     border-right: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-large {
+    display: none;
+  }
+  .nav-small-main {
+    height: 6vh;
+  }
+  .nav-small li {
+    height: 6vh;
+    width: auto;
+  }
+  .nav-center-logo h4 a {
+    color: white;
+    font-size: 1vh;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .nav-small {
+    display: none;
   }
 }

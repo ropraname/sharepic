@@ -8,10 +8,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-	<script src="{% static 'main/js/main.js' %}"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+	<script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg fixed-top nav">
+	<nav class="navbar navbar-expand-lg fixed-top nav nav-large">
 		<div class="collapse navbar-collapse " id="navbarSupportedContent">
 			<div class="collapse navbar-collapse col-lg-6 col-md-6 nav-first">
 				<ul class="navbar-nav mr-4 topnav">
@@ -47,6 +48,49 @@
 					</li>
 					<li class="nav-item">
 						<a href="{% url 'logout' %}" class="nav-link main-text compressing-text" id="logout" class="auth">Выход</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-expand fixed-bottom nav nav-small nav-small-main">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent container">
+			<div class="collapse navbar-collapse col nav-first row">
+				<ul class="navbar-nav topnav">
+					<li class="nav-item">
+						<a href="{% url 'home' %}" class="nav-link main-text compressing-text " class="active" id="home"><i class="bi bi-house bi-4x"></i></a>
+
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'view_home' %}" class="nav-link main-text compressing-text" id="lent"><i class="bi bi-view-list"></i></a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'upload' %}" class="nav-link main-text compressing-text" id="share"><i class="bi bi-pencil-square"></i></a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'view_scoreboard' %}" class="nav-link main-text compressing-text" id="scoreboard"><i class="bi bi-award"></i></a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'view_profile' %}" class="nav-link main-text compressing-text" id="profile"><i class="bi bi-file-person"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>	
+	</nav>
+
+	<nav class="navbar navbar-expand fixed-top nav nav-small nav-small-auth">
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+			<div class="collapse navbar-collapse col-sm-12 col-md-12 center-block nav-second">
+				<ul class="navbar-nav mr-4 topnav-auth">
+					<li class="nav-item">
+						<a href="{% url 'login' %}" class="nav-link main-text compressing-text" id="login" class="auth"><i class="bi bi-door-open"></i></a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'registr' %}" class="nav-link main-text compressing-text" id="registr" class="auth"><i class="bi bi-person-plus"></i></a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'logout' %}" class="nav-link main-text compressing-text" id="logout" class="auth"><i class="bi bi-door-closed"></i></a>
 					</li>
 				</ul>
 			</div>
