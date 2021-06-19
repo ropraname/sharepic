@@ -222,7 +222,6 @@ def sort_pictures(num_of_sort, pictures_with_rating, pictures_with_rating_to_sor
             pictures_with_rating_sorted[key] = pictures_with_rating_to_sort[key]
         for key in pictures_with_rating_sorted:
             pictures_sorted.append(key)
-        print(pictures_with_rating_sorted)
 
     else:
         for picture_rate in pictures_with_rating:
@@ -234,6 +233,5 @@ def sort_pictures(num_of_sort, pictures_with_rating, pictures_with_rating_to_sor
             pictures_with_rating_sorted[key] = pictures_with_rating_to_sort[key]
         for key in pictures_with_rating_sorted:
             pictures_sorted.append(key)
-        print(pictures_with_rating_sorted)
 
     return pictures_sorted
