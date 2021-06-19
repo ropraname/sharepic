@@ -1,6 +1,6 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}{{ user }}{% endblock %}
+{% block title %}Ваш профиль{% endblock %}
 
 {% block content %}
 	<div class="container">
@@ -12,7 +12,7 @@
 					</div>			
 				{% endfor %}
 			{% else %}
-				<h1 class="main-title title-compressing col-12 bold-text white_text">Рисунков не найдено</h1>
+				<h1 class="main-title title-compressing col-12">Вы еще ничего не выложили</h1>
 			{% endif %}
 		</div>
 	</div>

@@ -9,12 +9,20 @@
 	<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+	<script src="{% static 'main/js/masonry.pkgd.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
+
+
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg fixed-top nav nav-large">
-		<div class="collapse navbar-collapse " id="navbarSupportedContent">
-			<div class="collapse navbar-collapse col-lg-6 col-md-6 nav-first">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="collapse navbar-collapse nav-center-logo navbar-expand-xl col-lg-3 col-md-3 justify-content-center">
+				<h4><a href="{% url 'home' %}" class="nav-link main-text compressing-text">SharePic</a></h4>
+			</div>
+			
+			<div class="collapse navbar-collapse col-lg-6 col-md-6 nav-first justify-content-center">
 				<ul class="navbar-nav mr-4 topnav">
 					<li class="nav-item">
 						<a href="{% url 'home' %}" class="nav-link main-text compressing-text"class="active" id="home">Главная</a>
@@ -29,29 +37,26 @@
 						<a href="{% url 'view_scoreboard' %}" class="nav-link main-text compressing-text" id="scoreboard">Лидеры</a>
 					</li>
 					<li class="nav-item">
-						<a href="{% url 'view_profile' %}" class="nav-link main-text compressing-text" id="profile">Профиль</a>
+						<a href="{% url 'view_your_profile' %}" class="nav-link main-text compressing-text" id="profile">Профиль</a>
 					</li>
 				</ul>
 			</div>
 
-			<div class="collapse navbar-collapse nav-center-logo navbar-expand-xl col-lg-3 col-md-3">
-				<h4><a href="{% url 'home' %}" class="nav-link main-text compressing-text">SharePic</a></h4>
-			</div>
 
-			<div class="collapse navbar-collapse col-lg-3 col-md-3 nav-second">
+			<div class="collapse navbar-collapse col-lg-3 col-md-3 nav-second justify-content-center">
 				<ul class="navbar-nav mr-4 topnav-auth">
 					{% if user.is_authenticated %}
+						<li class="nav-item">
+							<a href="{% url 'logout' %}" class="nav-link main-text compressing-text" id="logout" class="auth">Выход</a>
+						</li>
 					{% else %}
 						<li class="nav-item">
 							<a href="{% url 'login' %}" class="nav-link main-text compressing-text" id="login" class="auth">Вход</a>
 						</li>
+						<li class="nav-item">
+							<a href="{% url 'registr' %}" class="nav-link main-text compressing-text" id="registr" class="auth">Регистрация</a>
+						</li>
 					{% endif %}
-					<li class="nav-item">
-						<a href="{% url 'registr' %}" class="nav-link main-text compressing-text" id="registr" class="auth">Регистрация</a>
-					</li>
-					<li class="nav-item">
-						<a href="{% url 'logout' %}" class="nav-link main-text compressing-text" id="logout" class="auth">Выход</a>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -113,7 +118,6 @@
 								</svg>
 							</a>
 						</li>
-					{% endif %}
 					<li class="nav-item col-3">
 						<a href="{% url 'registr' %}" class="nav-link main-text compressing-text icon-link" id="registr" class="auth">
 							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-person-plus compressing-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -122,6 +126,7 @@
 							</svg>
 						</a>
 					</li>
+					{% endif %}
 					{% if user.is_authenticated %}
 						<li class="nav-item col-3">
 							<a href="{% url 'logout' %}" class="nav-link main-text compressing-text icon-link" id="logout" class="auth">
@@ -135,7 +140,7 @@
 					{% else %}
 					{% endif %}
 					<li class="nav-item col-3">
-						<a href="{% url 'view_profile' %}" class="nav-link main-text compressing-text text-center icon-link" id="profile">
+						<a href="{% url 'view_your_profile' %}" class="nav-link main-text compressing-text text-center icon-link" id="profile">
 							<svg width="5vh" height="5vh" viewBox="0 0 16 16" class="bi bi-file-person compressing-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   								<path fill-rule="evenodd" d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4z"/>
   								<path d="M13.784 14c-.497-1.27-1.988-3-5.784-3s-5.287 1.73-5.784 3h11.568z"/>

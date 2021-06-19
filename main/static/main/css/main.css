@@ -12,6 +12,9 @@ body {
   overflow-x: hidden;
 }
 
+.unsee{
+  display: none;
+}
 
 /* Стили для текста. Это общий класс для красивого текста */
 
@@ -154,13 +157,16 @@ body {
   color: var(--white);
   border: 0;
   max-width: 200px;
-  font-weight: bold;
+  font-weight: bolder;
+  font-family: 'Inconsolata', monospace;
 }
 
 .share-form .right .form-control::placeholder {
-  color: #164A41;
-  font-size: 16px;
-  font-weight: normal;
+  color: gray;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.85vh;
+  font-weight: bolder;
+  height: auto;
 }
 
 .share-form .right textarea {
@@ -188,40 +194,40 @@ body {
 
 
 
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
 }
 
 :-moz-placeholder {
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
 }
 
 :-o-placeholder {
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
 }
 
 :-khtml-placeholder {
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
 }
 
 :placeholder {
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
-}
+} */
 
 input,
 textarea {
@@ -230,6 +236,28 @@ textarea {
   font-weight: normal;
   font-family: 'Inconsolata', monospace;
   letter-spacing: 0.05vw;
+}
+
+.bold-text-input-search {
+  font-size: 2vh;
+  height: auto;
+  font-weight: bolder;
+  font-family: 'Inconsolata', monospace;
+}
+.bold-text-input {
+  font-size: 1.85vh;
+  height: auto;
+  font-weight: bolder;
+  font-family: 'Inconsolata', monospace;
+}
+.bold-text-submit {
+  height: auto;
+  font-weight: bolder;
+  font-family: 'Inconsolata', monospace;
+}
+.bold-text {
+  font-weight: bolder;
+  font-family: 'Inconsolata', monospace;
 }
 
 input[type="file"] {
@@ -268,6 +296,27 @@ main {
 
 /* main */
 
+.btn-secondary{
+  background: #F1B24A;
+  border: 0;
+  max-width: 200px;
+  height: auto;
+}
+.btn-secondary:hover{
+  opacity: 1.2;
+  transform: scale(1.05);
+  background: #F1B24A;
+  border: 0;
+}
+
+
+.form-profile {
+  margin-bottom: 2vh;
+}
+
+.pictures_lent {
+  margin-bottom: 10vw;
+}
 main .features_0 .img-fluid {
   border-radius: 20px;
   width: 300px;
@@ -384,6 +433,22 @@ main .features .right .date-block {
   background: white;
   border-radius: 20px;
   cursor: default;
+}
+.profile_url{
+  text-decoration: none;
+  color: black;
+}
+.profile_url h4:hover, .profile_url:hover{
+  text-decoration: none;
+  color: black;
+  transition: opacity 124ms linear, transform 124ms linear;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.white_text{
+  color: white;
 }
 
 @media screen and (max-width: 1500px) {

@@ -6,7 +6,9 @@
 	<div class="features container detail-view">
 		<div class="row">
 			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 left text-center">
-				<h4 id="username-field-detail" class="username-block main-text detail-text">{{ picture_data.current_user }}</h4>
+				<a href="{% url 'view_profile' %}?user_to_see={{ picture_data.current_user }}" class="profile_url">
+					<h4 id="username-field-detail" class="username-block main-text detail-text">{{ picture_data.current_user }}</h4>
+				</a>
 				<img id="picture-field-detail" class="picture-block img-fluid" src="{{ picture_data.picture.url }}">	
 			</div>
 

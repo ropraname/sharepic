@@ -3,18 +3,43 @@
 {% block title %}Лента{% endblock %}
 
 {% block content %}
-	<div class="container">
-		<div class="features_0 row pictures_lent">
-			{% if pictures|length >= 1 %}
-				{% for el in pictures %}
-					<div class="pic_post col-xl-3 col-lg-4 col-md-6 col-sm-12 text-center">
-						<a href="{% url 'picture-detail' el.id %}"><img src="{{ el.picture.url }}" class="img-fluid"></a>
-						<h4>{{ el.current_user }}</h4>
-					</div>			
-				{% endfor %}
-			{% else %}
-				<p>Нет записей</p>
-			{% endif %}
+<div class="container">
+	<form action="" method="post" class="form-profile">
+		{% csrf_token %}
+		<div class="form-row align-items-center justify-content-center">
+			<div class="col-auto">
+				<label class="sr-only" for="inlineFormInputGroup">Имя пользователя</label>
+				<div class="input-group mb-2" id="username_input">
+					<div class="input-group-prepend">
+						<div class="input-group-text">@</div>
+					</div>
+					<input type="text" class="form-control bold-text-input" id="inlineFormInputGroup" placeholder="Имя пользователя" name="username">
+				</div>
+			</div>
+			<div class="col-auto">
+				<button type="submit" class="btn btn-secondary mb-2 text-center">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+					<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+					</svg>
+				</button>
+				<script type="text/javascript">
+					var height = document.getElementById('username_input').offsetHeight;
+					document.querySelector(".bi-search").style.height = height - 10;
+				</script>
+			</div>
 		</div>
+	</form>
+	<div class="features_0 row pictures_lent" id="cont_compressed_blocks">
+		{% if pictures|length >= 1 %}
+		{% for el in pictures %}
+		<div class="pic_post col-xl-3 col-lg-3 col-md-6 col-sm-12 text-center block_to_compress">
+			<a href="{% url 'picture-detail' el.id %}"><img src="{{ el.picture.url }}" class="img-fluid"></a>
+			<h4>{{ el.current_user }}</h4>
+		</div>			
+		{% endfor %}
+		{% else %}
+		<p>Нет записей</p>
+		{% endif %}
 	</div>
+</div>
 {% endblock %}

@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 
@@ -7,6 +7,7 @@ urlpatterns = [
     path('share/', views.upload, name='upload'),
     path('view/<int:pk>/', views.PictureDetailView.as_view(), name='picture-detail'),
     path('profile/', views.view_profile, name='view_profile'),
+    path('my_profile/', views.view_your_profile, name='view_your_profile'),
     path('scoreboard/', views.view_scoreboard, name='view_scoreboard'),
     path('view/<int:pk>/update',
          views.PictureUpdateView.as_view(), name='picture-update'),

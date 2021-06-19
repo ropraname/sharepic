@@ -15,7 +15,7 @@
 				<div class="col-lg-6 col-md-10 col-sm-10 right offset-sm-1 offset-md-1 offset-lg-0">
 					<h4 class="main-text">Какое название рисунка?</h4>
 					<div class="form-group">
-						<input type="text" class="form-control" name="{{ form.title.name }}" id="id_{{ form.title.name }}" placeholder="Название рисунка">
+						<input type="text" class="form-control bold-text-input" name="{{ form.title.name }}" id="id_{{ form.title.name }}" placeholder="Название рисунка">
 					</div>
 					<h4 class="main-text">Загрузи файл рисунка</h4>
 					<div class="form-group">
@@ -23,14 +23,15 @@
 							<i class="fa fa-upload "></i>
 							Загрузить рисунок
 						</label>
-						<input id="file-upload" type="file" class="form-control-file" name="{{ form.picture.name }}" id="id_{{ form.picture.name }}" value="{{ form.picrute.value }}" placeholder="Прикрепить рисунок">
+						<input id="file-upload" type="file" class="form-control-file bold-text-input" name="{{ form.picture.name }}" id="id_{{ form.picture.name }}" value="{{ form.picrute.value }}" placeholder="Прикрепить рисунок">
 					</div>
 					<h4 class="main-text">Какое описание рисунка в кратце?</h4>
-					<div class="form-group">					<input type="text" class="form-control" name="{{ form.anons.name }}" id="id_{{ form.anons.name }}" value="{{ form.anons.value }}" placeholder="Краткое описание">
+					<div class="form-group">
+						<input type="text" class="form-control bold-text-input" name="{{ form.anons.name }}" id="id_{{ form.anons.name }}" value="{{ form.anons.value }}" placeholder="Краткое описание">
 					</div>
 					<h4 class="main-text">Какое описание рисунка?</h4>
 					<div class="form-group">
-						<textarea class="form-control form-control-lg" name="{{ form.full_text.name }}" id="id_{{ form.full_text.name }}" value="{{ form.full_text.value }}" placeholder="Описание рисунка">
+						<textarea class="form-control form-control-lg bold-text-input" name="{{ form.full_text.name }}" id="id_{{ form.full_text.name }}" value="{{ form.full_text.value }}" placeholder="Описание рисунка">
 						</textarea>
 					</div>
 					<input type="submit" class="btn btn-secondary btn-block" value="Поделиться" name="">

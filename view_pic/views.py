@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
+from django.contrib.auth.models import User
 from .models import Picture
 from .forms import PictureForm
 
@@ -27,6 +28,10 @@ def upload(request):
 @login_required
 def view_home(request):
     pictures = Picture.objects.all()
+    if request.method == 'POST':
+        global profile_name
+        profile_name = str(request.POST['username'])
+        return redirect('view_profile')
     data = {
         'pictures': pictures
     }
@@ -34,9 +39,37 @@ def view_home(request):
 
 
 @login_required
-def view_profile(request):
-    return render(request, 'view_pic/dummy.html')
+def view_your_profile(request):
+    user = request.user
+    all_pictures = Picture.objects.all()
+    user_pictures = []
+    for picture in all_pictures:
+        if picture.current_user == user:
+            user_pictures.append(picture)
+    data = {
+        'pictures': user_pictures
+    }
+    return render(request, 'view_pic/view_your_profile.html', data)
 
+@login_required
+def view_profile(request):
+    all_pictures = Picture.objects.all()
+    user_pictures = []
+    try:
+        user = request.GET['user_to_see']
+        for picture in all_pictures:
+            if str(picture.current_user) == user:
+                user_pictures.append(picture)
+    except:
+        user = profile_name
+        for picture in all_pictures:
+            if str(picture.current_user) == user:
+                user_pictures.append(picture)
+    data = {
+        'pictures': user_pictures,
+        'user': user
+    }
+    return render(request, 'view_pic/view_profile.html', data)
 
 @login_required
 def view_scoreboard(request):
