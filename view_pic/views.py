@@ -31,7 +31,6 @@ def upload(request):
     return render(request, 'view_pic/upload.html', data)
 
 
-@login_required
 def view_home(request):
     pictures = Picture.objects.all().order_by('-date')
     if request.method == 'POST':
@@ -58,7 +57,7 @@ def view_your_profile(request):
     }
     return render(request, 'view_pic/view_your_profile.html', data)
 
-@login_required
+
 def view_profile(request):
     all_pictures = Picture.objects.all().order_by('-date')
     user_pictures = []
@@ -78,7 +77,7 @@ def view_profile(request):
     }
     return render(request, 'view_pic/view_profile.html', data)
 
-@login_required
+
 def view_scoreboard(request):
     if request.method == 'POST':
         global profile_name
@@ -147,29 +146,30 @@ def picture_detail(request, pk):
     data = {}
     
     user = request.user
-    is_evaluate = False
-    for grade in all_gradings:
-        if picture == grade.picture_id:
-            if user == grade.evaluating_user:
-                is_evaluate = True
-    
-    if is_evaluate is False:
-        if request.method == 'POST':
-            form = GradingForm(request.POST)
-            if form.is_valid():
-                post = form.save(commit=False)
-                post.evaluating_user = request.user
-                post.picture_id = picture
-                post.save()
-                data.update({'rate': True})
-        else:
-            form = GradingForm()
+    if user.is_authenticated:
+        is_evaluate = False
+        for grade in all_gradings:
+            if picture == grade.picture_id:
+                if user == grade.evaluating_user:
+                    is_evaluate = True
+        
+        if is_evaluate is False:
+            if request.method == 'POST':
+                form = GradingForm(request.POST)
+                if form.is_valid():
+                    post = form.save(commit=False)
+                    post.evaluating_user = request.user
+                    post.picture_id = picture
+                    post.save()
+                    data.update({'rate': True})
+            else:
+                form = GradingForm()
 
-        data.update({
-            'picture_data': picture,
-            'grading_form': form,
-            'not_evaluate' : True
-        })
+            data.update({
+                'picture_data': picture,
+                'grading_form': form,
+                'not_evaluate' : True
+            })
     else:
         data = {
             'picture_data': picture,
