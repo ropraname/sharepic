@@ -1,4 +1,4 @@
-<h2> <a href="http://194.58.90.12:4242/view/"> SharePic </a> is a website <br> <br>
+<h2> <a href="http://sharepic.silaeder.ru/view/"> SharePic </a> is a website <br> <br>
 Here you can share drawings, view drawings and much more. </h2>
 
 - There is a page with a drawings where you can go and give an assessment according to different criteria.
